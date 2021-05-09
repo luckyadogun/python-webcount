@@ -7,7 +7,7 @@ def test_with_patch():
     mock_requests.get.return_value.text = 'aa bbb c'
     with patch('webcount.functions.requests', mock_requests):
         result = most_common_word_in_web_page(
-            ['a', 'b', 'c'],
+            ['a', 'b', 'c', 'd'],
             'https://python.org/',
         )
     assert result == 'b', \
